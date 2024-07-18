@@ -4,13 +4,15 @@ import java.util.List;
 
 public class DaciaConfigurator extends MasinaConfigurator {
 
-    public String versiune;
-    public String motor;
-    public String culoare;
-    public String jante;
-    public String interior;
-    public List<String> echipamente;
-    public List<String> accesorii;
+    private String versiune;
+    private String motor;
+    private String culoare;
+    private String jante;
+    private String interior;
+    private List<String> echipamente;
+    private List<String> accesorii;
+    private Double pretStandard;
+    private Double pretFinal;
 
 
 
@@ -35,12 +37,12 @@ public class DaciaConfigurator extends MasinaConfigurator {
         System.out.println("Interiorul masinii este compus din:" + interior);
 
         System.out.println("Echipamentele masinii sunt:");
-        for (Integer i=0; i<echipamente.size(); i++){
-            System.out.println(echipamente.get(i));
+        for (String s : echipamente) {
+            System.out.println(s);
         }
         System.out.println("Accesoriile masinii sunt:");
-        for (Integer j=0; j<accesorii.size(); j++){
-            System.out.println(accesorii.get(j));
+        for (String s : accesorii) {
+            System.out.println(s);
         }
         calculPretStandard();
         calculPretFinal();
@@ -48,7 +50,7 @@ public class DaciaConfigurator extends MasinaConfigurator {
 
     //trebuie sa determinam pretul standard al masinii in functie de model
     public void calculPretStandard(){
-        if( model.equals("Logan")){
+        if( getModel().equals("Logan")){
             if(versiune.equals("ESSENTIAL")){
                 pretStandard=13.500;
             } else if (versiune.equals("EXPRESSION")) {
@@ -61,14 +63,13 @@ public class DaciaConfigurator extends MasinaConfigurator {
             }
         }
 
-        System.out.printf("Pretul standard este: %,.3f", pretStandard);
-        System.out.println();
+        System.out.printf("Pretul standard este: %,.3f \n", pretStandard);
 
     }
 
     public void calculPretFinal(){
         double pretOptiuni=0.000;
-        if( model.equals("Logan")){
+        if( getModel().equals("Logan")){
             if(versiune.equals("ESSENTIAL")){
                 switch(culoare){
                     case "grey":
@@ -118,10 +119,64 @@ public class DaciaConfigurator extends MasinaConfigurator {
             }
         }
         pretFinal=pretStandard+pretOptiuni;
-        System.out.printf("Pretul final este: %,.3f", pretFinal);
+        System.out.printf("Pretul final este: %,.3f \n", pretFinal);
 
     }
 
+    public String getVersiune() {
+        return versiune;
+    }
 
+    public void setVersiune(String versiune) {
+        this.versiune = versiune;
+    }
+
+    public String getMotor() {
+        return motor;
+    }
+
+    public void setMotor(String motor) {
+        this.motor = motor;
+    }
+
+    public String getCuloare() {
+        return culoare;
+    }
+
+    public void setCuloare(String culoare) {
+        this.culoare = culoare;
+    }
+
+    public String getJante() {
+        return jante;
+    }
+
+    public void setJante(String jante) {
+        this.jante = jante;
+    }
+
+    public String getInterior() {
+        return interior;
+    }
+
+    public void setInterior(String interior) {
+        this.interior = interior;
+    }
+
+    public List<String> getEchipamente() {
+        return echipamente;
+    }
+
+    public void setEchipamente(List<String> echipamente) {
+        this.echipamente = echipamente;
+    }
+
+    public List<String> getAccesorii() {
+        return accesorii;
+    }
+
+    public void setAccesorii(List<String> accesorii) {
+        this.accesorii = accesorii;
+    }
 
 }

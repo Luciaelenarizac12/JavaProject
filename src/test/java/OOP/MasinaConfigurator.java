@@ -2,11 +2,10 @@ package OOP;
 
 public class MasinaConfigurator {
 
-    public String marca;
-    public String model;
-    public Integer an;
-    public Double pretStandard;
-    public Double pretFinal;
+    private String marca;
+    private String model;
+    private Integer an;
+
 
     public MasinaConfigurator(String marca, String model, Integer an) {
         this.marca = marca;
@@ -25,6 +24,9 @@ public class MasinaConfigurator {
     // Copilul va avea acces la proprietatile/metodele din clasa parinte (daca se foloseste public/protected/default)
     // Ca sa apelam constructorul din parinte in copil se foloseste keyword ul "super"
 
+    //Incapsularea = conceptul prin care putem sa setam anumite restrictii de vizibilitate pentru proprietati/metode
+
+
     public void infoMasina(){
         System.out.println("Marca masinii este:" + marca);
         System.out.println("Modelul masinii este:" + model);
@@ -33,7 +35,28 @@ public class MasinaConfigurator {
 
     }
 
+    public String getMarca() {
+        return marca;
+    }
 
+    public String getModel() {
+        return model;
+    }
 
+    public Integer getAn() {
+        return an;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public void setAn(Integer an) {
+        this.an = an;
+    }
 
 }
