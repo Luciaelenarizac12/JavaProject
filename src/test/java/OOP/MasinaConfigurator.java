@@ -35,6 +35,33 @@ public class MasinaConfigurator {
 
     }
 
+    //   !!!!!!!!!Polimorfism Dinamic !!!!!!!!!!!!!!!:
+
+    public void pornesteMotor(){
+        System.out.println("Masina se portneste cu ajutorul cheii");
+    }
+
+    //Exemplul e polimorfism dinamic:
+
+    public void deschideGeam(){
+        System.out.println("Masina deschide geamul cu ajutorul manivelei");
+    }
+
+    // !!!!!!! Polimorfism Static!!!!!!!!!! :
+    public void promotieDacia(){
+        System.out.println("Pentru luna iulie Dacia nu are promotii.");
+    }
+
+    public void promotieDacia(String tichet){
+        System.out.println("Daca ai tichet "+tichet+" primesti reducere");
+    }
+
+    public void promotieDacia(Integer reducere){
+        System.out.println("In luna Decembrie, Dacia primeste reducerea de:" +reducere);
+    }
+
+
+
     public String getMarca() {
         return marca;
     }

@@ -47,6 +47,15 @@ public class DaciaConfigurator extends MasinaConfigurator {
         calculPretStandard();
         calculPretFinal();
     }
+    //Aplicam polimorfismul DINAMIC (suprascriem comportamentul- copilul a detectat comportamentul in parinte si vine si si-l face pe al lui)
+    public void pornesteMotor(){
+        System.out.println("Masinile Dacia pornesc motorul cu ajutorul butonului");
+    }
+    //exemplul 2 polimorfism dinamic
+    public void deschideGeam(){
+        System.out.println("Masinile Dacia deschid geamul cu ajutorul butonului");
+    }
+
 
     //trebuie sa determinam pretul standard al masinii in functie de model
     public void calculPretStandard(){
